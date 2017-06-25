@@ -17,7 +17,7 @@ Directly:
 font, err := Load("sans")
 ```
 
-With cache: 
+With cache:
 
 ```go
 cache := NewFontCache()
