@@ -22,6 +22,12 @@ func (s *FontLoaderSuite) TestLoadSans(c *C) {
 	c.Assert(f, NotNil)
 }
 
+func (s *FontLoaderSuite) TestLoadSansDefaultCache(c *C) {
+	f, err := LoadCache("sans")
+	c.Assert(err, IsNil)
+	c.Assert(f, NotNil)
+}
+
 func (s *FontLoaderSuite) TestLoadPath(c *C) {
 	path, err := findFont("sans")
 	c.Assert(err, IsNil)

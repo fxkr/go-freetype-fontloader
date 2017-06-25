@@ -14,6 +14,10 @@ const (
 	FONTCONFIG_MATCH_PROGRAM = "fc-match"
 )
 
+var (
+	defaultCache = NewFontCache()
+)
+
 type FontCache interface {
 	Load(fontName string) (*truetype.Font, error)
 }
@@ -59,6 +63,10 @@ func (fc *fontCache) Load(fontName string) (*truetype.Font, error) {
 	}
 
 	return font, nil
+}
+
+func LoadCache(fontName string) (*truetype.Font, error) {
+	return defaultCache.Load(fontName)
 }
 
 func Load(fontName string) (*truetype.Font, error) {

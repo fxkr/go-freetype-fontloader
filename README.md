@@ -24,6 +24,12 @@ cache := NewFontCache()
 font, err := cache.Load("sans")
 ```
 
+For ease of use, there's a pre-defined global cache:
+
+```go
+font, err := LoadCache("sans")
+```
+
 Absolute paths are also supported. This provides a fallback for users who don't have fontconfig installed:
 
 ```go
