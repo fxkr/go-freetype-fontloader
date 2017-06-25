@@ -1,0 +1,13 @@
+language: go
+
+go:
+  - 1.x
+  - 1.7.x
+
+dist: trusty
+
+addons:
+  apt:
+    packages:
+      - fonts-dejavu
+      - fontconfig
