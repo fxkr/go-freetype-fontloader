@@ -11,23 +11,23 @@ Includes a simple font cache.
 
 # Usage
 
-Directly:
+Recommended usage (assuming few fonts are needed):
+
+```go
+font, err := LoadCache("sans")
+```
+
+Loading a font without caching it (e.g. to implement your own cache):
 
 ```go
 font, err := Load("sans")
 ```
 
-With cache:
+Using your own cache instance instead of the predefined global cache:
 
 ```go
 cache := NewFontCache()
 font, err := cache.Load("sans")
-```
-
-For ease of use, there's a pre-defined global cache:
-
-```go
-font, err := LoadCache("sans")
 ```
 
 Absolute paths are also supported. This provides a fallback for users who don't have fontconfig installed:
